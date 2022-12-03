@@ -1,18 +1,9 @@
 import { load, time } from "../util.ts";
+import { getLetterPriority } from "./util3.ts";
 
 const input = await load("./day3/input.txt");
 
 time(() => {
-  const getLetterPriority = (letter: string) => {
-    if (!letter) {
-      return 0;
-    }
-
-    const charCode = letter.charCodeAt(0);
-
-    return charCode < 97 ? charCode - 38 : charCode - 96;
-  };
-
   const findDuplicateLetter = (line: string) => {
     const firstHalfMap: Record<string, boolean> = {};
     const secondHalfMap: Record<string, boolean> = {};
